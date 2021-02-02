@@ -23,3 +23,8 @@ steps:
     checkStyleRunAnalysis: true
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(system.artifactstagingdirectory)'
