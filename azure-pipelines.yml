@@ -26,7 +26,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: 'target/*.jar'
+    Contents: '**/*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: AzureRmWebAppDeployment@4
   inputs:
