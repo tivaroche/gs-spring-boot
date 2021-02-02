@@ -36,4 +36,3 @@ steps:
     WebAppName: 'luisroche-testjavaapp'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
     RuntimeStack: 'JAVA|8-jre8'
-    
