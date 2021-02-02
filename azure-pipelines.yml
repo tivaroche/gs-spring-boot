@@ -26,5 +26,14 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**/*.jar'
+    Contents: 'gs**/*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Luis Basic Subscription(133ed0ca-f533-4be8-857e-51c89e369fdb)'
+    appType: 'webAppLinux'
+    WebAppName: 'luisroche-testjavaapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
+    RuntimeStack: 'JAVA|8-jre8'
+    
