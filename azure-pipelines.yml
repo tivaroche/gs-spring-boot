@@ -27,4 +27,4 @@ steps:
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**/*.jar'
-    TargetFolder: '$(system.artifactstagingdirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
