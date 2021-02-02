@@ -28,11 +28,8 @@ steps:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: 'app/target/*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-- task: AzureRmWebAppDeployment@4
+- task: PublishBuildArtifacts@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Luis Basic Subscription(133ed0ca-f533-4be8-857e-51c89e369fdb)'
-    appType: 'webAppLinux'
-    WebAppName: 'luisroche-testjavaapp'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/app/target/*.jar'
-    RuntimeStack: 'JAVA|8-jre8'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
